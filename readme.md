@@ -1,4 +1,4 @@
-# Public Depart Cologne
+# Public Transport Depart Time Cologne
 
 Das Projekt Public Depart Cologne soll es ermöglichen, die nächste Strassenbahn zu finden und die genaue Abfahrtszeit herauszufinden.
 
