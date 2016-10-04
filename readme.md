@@ -1,4 +1,6 @@
-# NextBusCologne
+# Public Depart Cologne
+
+Das Projekt Public Depart Cologne soll es ermöglichen, die nächste Strassenbahn zu finden und die genaue Abfahrtszeit herauszufinden.
 
 ## License
 
