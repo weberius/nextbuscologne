@@ -1,6 +1,30 @@
 # Public Transport Depart Time Cologne
 
-Das Projekt Public Depart Cologne soll es ermöglichen, die nächste Strassenbahn zu finden und die genaue Abfahrtszeit herauszufinden.
+Das Projekt Public Depart Cologne liest zu einer angefragten Haltestelle die Abfahrtszeiten ein und formatiert sie in eine JSON-Struktur, die einfach auf einer Webseite angezeigt werden kann. Grundlage hierfür ist der [Widget Generator](http://www.kvb-koeln.de/generator/) der [Kölner Verkehrsbetriebe](http://www.kvb-koeln.de/).
+
+# Entwicklungsstand
+
+Dieses Projekt befindet sich in der Entwicklung
+
+# Verwendete Technologien/ Bibliotheken
+
+- Java
+- [jsoup](https://jsoup.org/)
+
+# Schnittstellen
+
+## /publicTransportDepartureTimeCologne/service/stop/{id}
+
+Dieses Schnittstelle stellt die aktuellen Abfahrtszeiten für die Haltestelle {id} zur Verfügung.
+
+Beispiel (Neumarkt):
+[/publicTransportDepartureTimeCologne/service/stop/2](https://tom.cologne.codefor.de/publicTransportDepartureTimeCologne/service/stop/2)
+
+# Installation
+
+1. Checkout Sources
+2. Build Application
+3. Deploy Application
 
 ## License
 
