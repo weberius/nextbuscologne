@@ -7,6 +7,7 @@ import java.text.ParseException;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import de.illilli.opendata.service.Facade;
@@ -14,6 +15,7 @@ import de.illilli.opendata.service.Facade;
 public class DepartureFacadeTest {
 
 	@Test
+	@Ignore
 	public void testGetJson() throws URISyntaxException, IOException, ParseException {
 		URL url = this.getClass().getResource("/neumarkt.htm").toURI().toURL();
 		Facade facade = new DepartureFacade(url);
