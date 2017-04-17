@@ -16,7 +16,7 @@ import de.illilli.opendata.service.publicTransportDepartureTimeCologne.model.Dep
 
 public class DepartureFacade implements Facade {
 
-	private List<Departure> data = new ArrayList<Departure>();
+	List<Departure> data = new ArrayList<Departure>();
 
 	public DepartureFacade(int id) throws IOException, ParseException {
 		// 1. Askfor

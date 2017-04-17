@@ -53,7 +53,15 @@ public class Service {
 
 		boolean datatables = request.getParameter("datatables") != null;
 
-		Facade facade = new DepartureFacade(id);
+		Facade facade = null;
+		if (datatables) {
+			logger.info("call '/publicTransportDepartureTimeCologne/service/stop/" + id + "&datatables'");
+			facade = new DepartureDatatablesFacade(id);
+		} else {
+			logger.info("call '/publicTransportDepartureTimeCologne/service/stop/" + id + "'");
+			facade = new DepartureFacade(id);
+		}
+
 		return facade.getJson();
 	}
 

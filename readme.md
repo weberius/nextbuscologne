@@ -20,6 +20,15 @@ Dieses Schnittstelle stellt die aktuellen Abfahrtszeiten für die Haltestelle {i
 Beispiel (Neumarkt):
 [/publicTransportDepartureTimeCologne/service/stop/2](https://tom.cologne.codefor.de/publicTransportDepartureTimeCologne/service/stop/2)
 
+## /publicTransportDepartureTimeCologne/service/stop/{id}?datatables
+
+Dieses Schnittstelle stellt die aktuellen Abfahrtszeiten für die Haltestelle {id} zur Verfügung. Die Rückgabe ist für die Verwendung der javascript Bibliothek datatables optimiert.
+
+Beispiel (Neumarkt):
+[/publicTransportDepartureTimeCologne/service/stop/2?datatables](https://tom.cologne.codefor.de/publicTransportDepartureTimeCologne/service/stop/2?datatables)
+
+
+
 # Installation
 
 1. Checkout Sources
