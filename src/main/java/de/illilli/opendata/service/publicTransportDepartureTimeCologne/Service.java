@@ -33,9 +33,22 @@ public class Service {
 
 	/**
 	 * <p>
-	 * Beispiel: <a href=
+	 * Beispiele:
+	 * <ul>
+	 * <li><a href=
 	 * "http://localhost:8080/publicTransportDepartureTimeCologne/service/stop/2">
-	 * /publicTransportDepartureTimeCologne/service/stop/2</a>
+	 * /publicTransportDepartureTimeCologne/service/stop/2</a> </il>
+	 * <li><a href=
+	 * "http://localhost:8080/publicTransportDepartureTimeCologne/service/stop/2?datatables">
+	 * /publicTransportDepartureTimeCologne/service/stop/2?datatables</a></li>
+	 * <li><a href=
+	 * "http://localhost:8080/publicTransportDepartureTimeCologne/service/stop/2?fromTo=50.940214,6.953710,50.940356,6.961413">
+	 * /publicTransportDepartureTimeCologne/service/stop/2?fromTo=50.940214,6.
+	 * 953710,50.940356,6.961413</a></li>
+	 * <li><a href=
+	 * "http://localhost:8080/publicTransportDepartureTimeCologne/service/stop/2?fromTo=50.940214,6.953710,50.940356,6.961413&datatables">
+	 * /publicTransportDepartureTimeCologne/service/stop/2?fromTo=50.940214,6.
+	 * 953710,50.940356,6.961413&datatables</a></li>
 	 * </p>
 	 * 
 	 * @param id
@@ -52,14 +65,28 @@ public class Service {
 		response.setCharacterEncoding(ENCODING);
 
 		boolean datatables = request.getParameter("datatables") != null;
+		String fromTo = request.getParameter("fromTo");
 
 		Facade facade = null;
 		if (datatables) {
-			logger.info("call '/publicTransportDepartureTimeCologne/service/stop/" + id + "&datatables'");
-			facade = new DepartureDatatablesFacade(id);
+			if (fromTo != null) {
+				facade = new DepartureDatatablesFacade(id, fromTo);
+				logger.info("call '/publicTransportDepartureTimeCologne/service/stop/" + id + "?fromTo" + fromTo
+						+ "&datatables'");
+			} else {
+				facade = new DepartureDatatablesFacade(id);
+				logger.info("call '/publicTransportDepartureTimeCologne/service/stop/" + id + "&datatables'");
+			}
 		} else {
 			logger.info("call '/publicTransportDepartureTimeCologne/service/stop/" + id + "'");
-			facade = new DepartureFacade(id);
+			if (fromTo != null) {
+				facade = new DepartureFacade(id, fromTo);
+				logger.info(
+						"call '/publicTransportDepartureTimeCologne/service/stop/" + id + "?fromTo=" + fromTo + "'");
+			} else {
+				facade = new DepartureFacade(id);
+				logger.info("call '/publicTransportDepartureTimeCologne/service/stop/" + id + "'");
+			}
 		}
 
 		return facade.getJson();

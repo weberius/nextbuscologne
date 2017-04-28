@@ -7,6 +7,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.google.gson.Gson;
 
 import de.illilli.opendata.service.Facade;
+import de.illilli.opendata.service.publicTransportDepartureTimeCologne.model.DepartureWithData;
 
 /**
  * Diese Facade liefert die Daten wie die DepartureFacade zurück. Es wird
@@ -15,13 +16,21 @@ import de.illilli.opendata.service.Facade;
  */
 public class DepartureDatatablesFacade extends DepartureFacade implements Facade {
 
+	DepartureWithData data;
+
+	public DepartureDatatablesFacade(int id, String fromTo) throws IOException, ParseException {
+		super(id, fromTo);
+		this.data = new DepartureWithData(super.data);
+	}
+
 	public DepartureDatatablesFacade(int id) throws IOException, ParseException {
 		super(id);
+		this.data = new DepartureWithData(super.data);
 	}
 
 	@Override
 	public String getJson() throws JsonProcessingException {
-		String json = "{\"data\":" + new Gson().toJson(super.data) + "}";
+		String json = new Gson().toJson(this.data);
 		return json;
 	}
 

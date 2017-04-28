@@ -1,52 +1,44 @@
 package de.illilli.opendata.service.publicTransportDepartureTimeCologne.model;
 
+import java.util.List;
+
 public class Departure {
 
-	private String route;
-	private String destination;
-	private int time;
+	private int distanceToDestination;
+	private int timeToDestination;
+	private List<Timetable> timetableList;
 
-	public Departure() {
-
+	public int getDistanceToDestination() {
+		return distanceToDestination;
 	}
 
-	public Departure(String route, String destination, int time) {
-		this.route = route;
-		this.destination = destination;
-		this.time = time;
+	public void setDistanceToDestination(int distanceToDestination) {
+		this.distanceToDestination = distanceToDestination;
 	}
 
-	public String getRoute() {
-		return route;
+	public int getTimeToDestination() {
+		return timeToDestination;
 	}
 
-	public void setRoute(String route) {
-		this.route = route;
+	public void setTimeToDestination(int timeToDestination) {
+		this.timeToDestination = timeToDestination;
 	}
 
-	public String getDestination() {
-		return destination;
+	public List<Timetable> getTimetableList() {
+		return timetableList;
 	}
 
-	public void setDestination(String destination) {
-		this.destination = destination;
-	}
-
-	public int getTime() {
-		return time;
-	}
-
-	public void setTime(int time) {
-		this.time = time;
+	public void setTimetableList(List<Timetable> timetableList) {
+		this.timetableList = timetableList;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((destination == null) ? 0 : destination.hashCode());
-		result = prime * result + ((route == null) ? 0 : route.hashCode());
-		result = prime * result + time;
+		result = prime * result + distanceToDestination;
+		result = prime * result + timeToDestination;
+		result = prime * result + ((timetableList == null) ? 0 : timetableList.hashCode());
 		return result;
 	}
 
@@ -59,24 +51,22 @@ public class Departure {
 		if (getClass() != obj.getClass())
 			return false;
 		Departure other = (Departure) obj;
-		if (destination == null) {
-			if (other.destination != null)
-				return false;
-		} else if (!destination.equals(other.destination))
+		if (distanceToDestination != other.distanceToDestination)
 			return false;
-		if (route == null) {
-			if (other.route != null)
-				return false;
-		} else if (!route.equals(other.route))
+		if (timeToDestination != other.timeToDestination)
 			return false;
-		if (time != other.time)
+		if (timetableList == null) {
+			if (other.timetableList != null)
+				return false;
+		} else if (!timetableList.equals(other.timetableList))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Departure [route=" + route + ", destination=" + destination + ", time=" + time + "]";
+		return "Departure [distanceToDestination=" + distanceToDestination + ", timeToDestination=" + timeToDestination
+				+ ", timetableList=" + timetableList + "]";
 	}
 
 }
