@@ -20,17 +20,31 @@ Dieses Projekt befindet sich in der Entwicklung
 
 ## /publicTransportDepartureTimeCologne/service/stop/{id}
 
-Dieses Schnittstelle stellt die aktuellen Abfahrtszeiten für die Haltestelle {id} zur Verfügung. Es werden Informationen zu dem benötigten Weg hinzugefügt.
+Dieses Schnittstelle stellt die aktuellen Abfahrtszeiten für die Haltestelle {id} zur Verfügung. 
 
 Beispiel (Neumarkt):
 [/publicTransportDepartureTimeCologne/service/stop/2](https://tom.cologne.codefor.de/publicTransportDepartureTimeCologne/service/stop/2)
 
 ## /publicTransportDepartureTimeCologne/service/stop/{id}?datatables
 
-Dieses Schnittstelle stellt die aktuellen Abfahrtszeiten für die Haltestelle {id} zur Verfügung. Die Rückgabe ist für die Verwendung der javascript Bibliothek datatables optimiert. Es werden Informationen zu dem benötigten Weg hinzugefügt.
+Diese Schnittstelle stellt die aktuellen Abfahrtszeiten für die Haltestelle {id} zur Verfügung. Die Rückgabe ist für die Verwendung der javascript Bibliothek datatables optimiert.
 
 Beispiel (Neumarkt):
 [/publicTransportDepartureTimeCologne/service/stop/2?datatables](https://tom.cologne.codefor.de/publicTransportDepartureTimeCologne/service/stop/2?datatables)
+
+## /publicTransportDepartureTimeCologne/service/stop/{id}?fromTo={lat,lng,lat,lng}
+
+Diese Schnittstelle stellt die aktuellen Abfahrtszeiten für die Haltestelle {id} zur Verfügung. Es wird der Fuss-Weg zwischen den Punkten fromTo={lat,lng,lat,lng} berücksichtigt.
+
+Beispiel (Neumarkt):
+[/publicTransportDepartureTimeCologne/service/stop/2?fromTo=50.940214,6.953710,50.940356,6.961413](https://tom.cologne.codefor.de/publicTransportDepartureTimeCologne/service/stop/2?fromTo=50.940214,6.953710,50.940356,6.961413)
+
+## /publicTransportDepartureTimeCologne/service/stop/{id}?fromTo={lat,lng,lat,lng}&datatables
+
+Diese Schnittstelle stellt die aktuellen Abfahrtszeiten für die Haltestelle {id} zur Verfügung. Es wird der Fuss-Weg zwischen den Punkten fromTo={lat,lng,lat,lng} berücksichtigt. Die Rückgabe ist für die Verwendung der javascript Bibliothek datatables optimiert.
+
+Beispiel (Neumarkt):
+[/publicTransportDepartureTimeCologne/service/stop/2?fromTo=50.940214,6.953710,50.940356,6.961413&datatables](/publicTransportDepartureTimeCologne/service/stop/2?fromTo=50.940214,6.953710,50.940356,6.961413&datatables)
 
 # Installation
 
