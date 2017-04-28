@@ -44,7 +44,7 @@ Beispiel (Neumarkt):
 Diese Schnittstelle stellt die aktuellen Abfahrtszeiten für die Haltestelle {id} zur Verfügung. Es wird der Fuss-Weg zwischen den Punkten fromTo={lat,lng,lat,lng} berücksichtigt. Die Rückgabe ist für die Verwendung der javascript Bibliothek datatables optimiert.
 
 Beispiel (Neumarkt):
-[/publicTransportDepartureTimeCologne/service/stop/2?fromTo=50.940214,6.953710,50.940356,6.961413&datatables](/publicTransportDepartureTimeCologne/service/stop/2?fromTo=50.940214,6.953710,50.940356,6.961413&datatables)
+[/publicTransportDepartureTimeCologne/service/stop/2?fromTo=50.940214,6.953710,50.940356,6.961413&datatables](https://tom.cologne.codefor.de/publicTransportDepartureTimeCologne/service/stop/2?fromTo=50.940214,6.953710,50.940356,6.961413&datatables)
 
 # Installation
 
