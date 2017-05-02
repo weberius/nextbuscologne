@@ -46,6 +46,14 @@ Diese Schnittstelle stellt die aktuellen Abfahrtszeiten für die Haltestelle {id
 Beispiel (Neumarkt):
 [/publicTransportDepartureTimeCologne/service/stop/2?fromTo=50.940214,6.953710,50.940356,6.961413&datatables](https://tom.cologne.codefor.de/publicTransportDepartureTimeCologne/service/stop/2?fromTo=50.940214,6.953710,50.940356,6.961413&datatables)
 
+## /publicTransportDepartureTimeCologne/service/bike/{id}
+
+Fragt die Daten eines Fahrrads mit der übergebenen id ab. 
+
+## /publicTransportDepartureTimeCologne/service/bike/{id}?fromTo={lat,lng,lat,lng}
+
+Fragt Daten eines Fahrrads ab. Wenn fromto übergeben wird, wird zusätzlich die Zeit übermittelt, die notwendig ist, um das Fahrrad zu erreichen.
+
 # Installation
 
 1. Checkout Sources
