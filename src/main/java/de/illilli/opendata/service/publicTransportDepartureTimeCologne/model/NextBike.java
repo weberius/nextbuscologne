@@ -6,28 +6,38 @@ package de.illilli.opendata.service.publicTransportDepartureTimeCologne.model;
  */
 public class NextBike extends KvbBike {
 
-	private int leave;
+	private int timeInMinutes;
+	private int distanceInMeter;
 
-	public int getLeave() {
-		return leave;
+	public int getTimeInMinutes() {
+		return timeInMinutes;
 	}
 
-	public void setLeave(int leave) {
-		this.leave = leave;
+	public void setTimeInMinutes(int leave) {
+		this.timeInMinutes = leave;
+	}
+
+	public int getDistanceInMeter() {
+		return distanceInMeter;
+	}
+
+	public void setDistanceInMeter(int distanceInMeter) {
+		this.distanceInMeter = distanceInMeter;
 	}
 
 	@Override
 	public String toString() {
-		return "NextBike [leave=" + leave + ", getUid()=" + getUid() + ", getName()=" + getName() + ", getBike()="
-				+ getBike() + ", getNumber()=" + getNumber() + ", getLat()=" + getLat() + ", getLng()=" + getLng()
-				+ ", getTimestamp()=" + getTimestamp() + "]";
+		return "NextBike [timeInMinutes=" + timeInMinutes + ", distanceInMeter=" + distanceInMeter + ", getUid()="
+				+ getUid() + ", getName()=" + getName() + ", getBike()=" + getBike() + ", getNumber()=" + getNumber()
+				+ ", getLat()=" + getLat() + ", getLng()=" + getLng() + ", getTimestamp()=" + getTimestamp() + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + leave;
+		result = prime * result + distanceInMeter;
+		result = prime * result + timeInMinutes;
 		return result;
 	}
 
@@ -40,7 +50,9 @@ public class NextBike extends KvbBike {
 		if (getClass() != obj.getClass())
 			return false;
 		NextBike other = (NextBike) obj;
-		if (leave != other.leave)
+		if (distanceInMeter != other.distanceInMeter)
+			return false;
+		if (timeInMinutes != other.timeInMinutes)
 			return false;
 		return true;
 	}
