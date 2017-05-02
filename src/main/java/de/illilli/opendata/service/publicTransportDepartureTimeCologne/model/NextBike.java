@@ -6,38 +6,37 @@ package de.illilli.opendata.service.publicTransportDepartureTimeCologne.model;
  */
 public class NextBike extends KvbBike {
 
-	private int timeInMinutes;
-	private int distanceInMeter;
+	private int timeToDestination;
+	private int distanceToDestination;
 
-	public int getTimeInMinutes() {
-		return timeInMinutes;
+	public int getTimeToDestination() {
+		return timeToDestination;
 	}
 
-	public void setTimeInMinutes(int leave) {
-		this.timeInMinutes = leave;
+	public void setTimeToDestination(int leave) {
+		this.timeToDestination = leave;
 	}
 
-	public int getDistanceInMeter() {
-		return distanceInMeter;
+	public int getDistanceToDestination() {
+		return distanceToDestination;
 	}
 
-	public void setDistanceInMeter(int distanceInMeter) {
-		this.distanceInMeter = distanceInMeter;
+	public void setDistanceToDestination(int distanceInMeter) {
+		this.distanceToDestination = distanceInMeter;
 	}
 
 	@Override
 	public String toString() {
-		return "NextBike [timeInMinutes=" + timeInMinutes + ", distanceInMeter=" + distanceInMeter + ", getUid()="
-				+ getUid() + ", getName()=" + getName() + ", getBike()=" + getBike() + ", getNumber()=" + getNumber()
-				+ ", getLat()=" + getLat() + ", getLng()=" + getLng() + ", getTimestamp()=" + getTimestamp() + "]";
+		return "NextBike [timeToDestination=" + timeToDestination + ", distanceToDestination=" + distanceToDestination
+				+ "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + distanceInMeter;
-		result = prime * result + timeInMinutes;
+		result = prime * result + distanceToDestination;
+		result = prime * result + timeToDestination;
 		return result;
 	}
 
@@ -50,9 +49,9 @@ public class NextBike extends KvbBike {
 		if (getClass() != obj.getClass())
 			return false;
 		NextBike other = (NextBike) obj;
-		if (distanceInMeter != other.distanceInMeter)
+		if (distanceToDestination != other.distanceToDestination)
 			return false;
-		if (timeInMinutes != other.timeInMinutes)
+		if (timeToDestination != other.timeToDestination)
 			return false;
 		return true;
 	}

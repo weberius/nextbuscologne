@@ -32,8 +32,8 @@ public class BikeFacade implements Facade {
 		data.setName(bike.getName());
 		data.setNumber(bike.getNumber());
 		data.setTimestamp(bike.getTimestamp());
-		data.setTimeInMinutes(askForFeetrouting.getData().getTimeInMinutes());
-		data.setDistanceInMeter(askForFeetrouting.getData().getDistanceInMeter());
+		data.setTimeToDestination(askForFeetrouting.getData().getTimeInMinutes());
+		data.setDistanceToDestination(askForFeetrouting.getData().getDistanceInMeter());
 	}
 
 	public BikeFacade(int id) throws IOException {
