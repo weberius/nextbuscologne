@@ -1,14 +1,13 @@
 package de.illilli.opendata.service.publicTransportDepartureTimeCologne.askfor;
 
 import java.io.IOException;
-import java.util.List;
 
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
 import de.illilli.opendata.service.AskFor;
-import de.illilli.opendata.service.publicTransportDepartureTimeCologne.model.Kvbabfahrt;
+import de.illilli.opendata.service.publicTransportDepartureTimeCologne.model.KvbBike;
 
 /**
  * <p>
@@ -18,7 +17,7 @@ import de.illilli.opendata.service.publicTransportDepartureTimeCologne.model.Kvb
  * TODO: Integrationstestumgebung einrichten
  * </p>
  */
-public class AskForKvbabfahrtsmonitorTest {
+public class AskForKvbBikeTest {
 
 	@Before
 	public void setUp() throws Exception {
@@ -27,8 +26,9 @@ public class AskForKvbabfahrtsmonitorTest {
 	@Test
 	@Ignore
 	public void test() throws IOException {
-		AskFor<List<Kvbabfahrt>> askfor = new AskForKvbabfahrtsmonitor(2);
-		System.out.println(askfor.getData().toString());
+		AskFor<KvbBike> askFor = new AskForKvbBike(22336);
+		KvbBike bike = askFor.getData();
+		System.out.println(bike.toString());
 	}
 
 }
