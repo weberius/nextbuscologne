@@ -50,9 +50,15 @@ Beispiel (Neumarkt):
 
 Fragt die Daten eines Fahrrads mit der übergebenen id ab. 
 
+Beispiel:
+[/publicTransportDepartureTimeCologne/service/bike/22336](https://tom.cologne.codefor.de/publicTransportDepartureTimeCologne/service/bike/22336)
+
 ## /publicTransportDepartureTimeCologne/service/bike/{id}?fromTo={lat,lng,lat,lng}
 
 Fragt Daten eines Fahrrads ab. Wenn fromto übergeben wird, wird zusätzlich die Zeit übermittelt, die notwendig ist, um das Fahrrad zu erreichen.
+
+Beispiel:
+[/publicTransportDepartureTimeCologne/service/bike/22336?fromTo=50.940214,6.953710,50.940356,6.961413](https://tom.cologne.codefor.de/publicTransportDepartureTimeCologne/service/bike/22336?fromTo=50.940214,6.953710,50.940356,6.961413)
 
 # Installation
 
