@@ -36,7 +36,7 @@ public class DepartureFacade implements Facade {
 			timetable.setLeave(abfahrt.getTime() - askForFeetrouting.getData().getTimeInMinutes());
 			this.timetableList.add(timetable);
 		}
-		this.data.setTimetableList(this.timetableList);
+		this.data.setData(this.timetableList);
 		this.data.setDistanceToDestination(askForFeetrouting.getData().getDistanceInMeter());
 		this.data.setTimeToDestination(askForFeetrouting.getData().getTimeInMinutes());
 	}
@@ -52,7 +52,7 @@ public class DepartureFacade implements Facade {
 			timetable.setTime(abfahrt.getTime());
 			this.timetableList.add(timetable);
 		}
-		this.data.setTimetableList(this.timetableList);
+		this.data.setData(this.timetableList);
 	}
 
 	@Override

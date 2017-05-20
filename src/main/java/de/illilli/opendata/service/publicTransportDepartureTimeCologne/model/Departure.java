@@ -6,7 +6,8 @@ public class Departure {
 
 	private int distanceToDestination;
 	private int timeToDestination;
-	private List<Timetable> timetableList;
+	private List<Timetable> data;
+	private long lastcall = System.currentTimeMillis();
 
 	public int getDistanceToDestination() {
 		return distanceToDestination;
@@ -24,21 +25,30 @@ public class Departure {
 		this.timeToDestination = timeToDestination;
 	}
 
-	public List<Timetable> getTimetableList() {
-		return timetableList;
+	public List<Timetable> getData() {
+		return data;
 	}
 
-	public void setTimetableList(List<Timetable> timetableList) {
-		this.timetableList = timetableList;
+	public void setData(List<Timetable> timetableList) {
+		this.data = timetableList;
+	}
+
+	public long getLastcall() {
+		return lastcall;
+	}
+
+	public void setLastcall(long lastcall) {
+		this.lastcall = lastcall;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((data == null) ? 0 : data.hashCode());
 		result = prime * result + distanceToDestination;
+		result = prime * result + (int) (lastcall ^ (lastcall >>> 32));
 		result = prime * result + timeToDestination;
-		result = prime * result + ((timetableList == null) ? 0 : timetableList.hashCode());
 		return result;
 	}
 
@@ -51,14 +61,16 @@ public class Departure {
 		if (getClass() != obj.getClass())
 			return false;
 		Departure other = (Departure) obj;
+		if (data == null) {
+			if (other.data != null)
+				return false;
+		} else if (!data.equals(other.data))
+			return false;
 		if (distanceToDestination != other.distanceToDestination)
 			return false;
-		if (timeToDestination != other.timeToDestination)
+		if (lastcall != other.lastcall)
 			return false;
-		if (timetableList == null) {
-			if (other.timetableList != null)
-				return false;
-		} else if (!timetableList.equals(other.timetableList))
+		if (timeToDestination != other.timeToDestination)
 			return false;
 		return true;
 	}
@@ -66,7 +78,7 @@ public class Departure {
 	@Override
 	public String toString() {
 		return "Departure [distanceToDestination=" + distanceToDestination + ", timeToDestination=" + timeToDestination
-				+ ", timetableList=" + timetableList + "]";
+				+ ", data=" + data + ", lastcall=" + lastcall + "]";
 	}
 
 }

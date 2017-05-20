@@ -10,7 +10,7 @@ public class DepartureWithData extends Departure {
 	public DepartureWithData(Departure departure) {
 		super.setDistanceToDestination(departure.getDistanceToDestination());
 		super.setTimeToDestination(departure.getTimeToDestination());
-		data = departure.getTimetableList();
+		data = departure.getData();
 	}
 
 	public List<Timetable> getData() {
