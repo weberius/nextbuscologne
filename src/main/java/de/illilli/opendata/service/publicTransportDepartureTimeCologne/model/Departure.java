@@ -1,5 +1,6 @@
 package de.illilli.opendata.service.publicTransportDepartureTimeCologne.model;
 
+import java.text.DateFormat;
 import java.util.List;
 
 public class Departure {
@@ -33,8 +34,8 @@ public class Departure {
 		this.data = timetableList;
 	}
 
-	public long getLastcall() {
-		return lastcall;
+	public String getLastcall() {
+		return DateFormat.getInstance().format(this.lastcall);
 	}
 
 	public void setLastcall(long lastcall) {
