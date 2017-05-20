@@ -8,7 +8,7 @@ public class Departure {
 	private int distanceToDestination;
 	private int timeToDestination;
 	private List<Timetable> data;
-	private long lastcall = System.currentTimeMillis();
+	private String lastcall = DateFormat.getInstance().format(System.currentTimeMillis());
 
 	public int getDistanceToDestination() {
 		return distanceToDestination;
@@ -38,7 +38,7 @@ public class Departure {
 		return DateFormat.getInstance().format(this.lastcall);
 	}
 
-	public void setLastcall(long lastcall) {
+	public void setLastcall(String lastcall) {
 		this.lastcall = lastcall;
 	}
 
@@ -48,7 +48,7 @@ public class Departure {
 		int result = 1;
 		result = prime * result + ((data == null) ? 0 : data.hashCode());
 		result = prime * result + distanceToDestination;
-		result = prime * result + (int) (lastcall ^ (lastcall >>> 32));
+		result = prime * result + ((lastcall == null) ? 0 : lastcall.hashCode());
 		result = prime * result + timeToDestination;
 		return result;
 	}
@@ -69,7 +69,10 @@ public class Departure {
 			return false;
 		if (distanceToDestination != other.distanceToDestination)
 			return false;
-		if (lastcall != other.lastcall)
+		if (lastcall == null) {
+			if (other.lastcall != null)
+				return false;
+		} else if (!lastcall.equals(other.lastcall))
 			return false;
 		if (timeToDestination != other.timeToDestination)
 			return false;
