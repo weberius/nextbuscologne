@@ -3,11 +3,22 @@ package de.illilli.opendata.service.publicTransportDepartureTimeCologne.askfor;
 import java.io.IOException;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import de.illilli.opendata.service.AskFor;
 import de.illilli.opendata.service.publicTransportDepartureTimeCologne.model.Feetrouting;
 
+/**
+ * <p>
+ * Integrationstest
+ * </p>
+ * <p>
+ * TODO: Integrationstestumgebung einrichten
+ * </p>
+ */
+
+@Ignore
 public class AskForFeetroutingTest {
 
 	@Before
